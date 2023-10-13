@@ -1,7 +1,6 @@
-# Tic Tac Toe game with GUI
-# using tkinter
+# Tic Tac Toe game with GUI using tkinter
  
-# importing all necessary libraries
+# importing libraries
 import random
 import tkinter
 from tkinter import *
@@ -9,14 +8,14 @@ from functools import partial
 from tkinter import messagebox
 from copy import deepcopy
  
-# sign variable to decide the turn of which player
+# deciding whos turn it is
 sign = 0
  
 # Creates an empty board
 global board
 board = [[" " for x in range(3)] for y in range(3)]
  
-# Check l(O/X) won the match or not
+# Check O or X is winner
 # according to the rules of the game
  
  
@@ -30,7 +29,7 @@ def winner(b, l):
             (b[0][0] == l and b[1][1] == l and b[2][2] == l) or
             (b[0][2] == l and b[1][1] == l and b[2][0] == l))
  
-# Configure text on button while playing with another player
+# Text on button while playing with another player
 def get_text(i, j, gb, l1, l2):
     global sign
     if board[i][j] == ' ':
@@ -54,13 +53,13 @@ def get_text(i, j, gb, l1, l2):
         gb.destroy()
         box = messagebox.showinfo("Tie Game", "Tie Game")
  
-# Check if the player can push the button or not
+# Validating if the player can push the button or not
  
  
 def isfree(i, j):
     return board[i][j] == " "
  
-# Check the board is full or not
+# Validating if the board is full or not
  
  
 def isfull():
@@ -70,7 +69,7 @@ def isfull():
             flag = False
     return flag
  
-# Create the GUI of game board for play along with another player
+# Creating GUI gameboard for playing with another player 
  
  
 def gameboard_pl(game_board, l1, l2):
@@ -123,7 +122,7 @@ def pc():
             move = random.randint(0, len(edge)-1)
             return edge[move]
  
-# Configure text on button while playing with system
+# Creating text on button while playing against system
  
  
 def get_text_pc(i, j, gb, l1, l2):
@@ -159,7 +158,7 @@ def get_text_pc(i, j, gb, l1, l2):
             button[move[0]][move[1]].config(state=DISABLED)
             get_text_pc(move[0], move[1], gb, l1, l2)
  
-# Create the GUI of game board for play along with system
+# Creating GUI game board against computer 
  
  
 def gameboard_pc(game_board, l1, l2):
@@ -178,7 +177,7 @@ def gameboard_pc(game_board, l1, l2):
             button[i][j].grid(row=m, column=n)
     game_board.mainloop()
  
-# Initialize the game board to play with system
+# Initialize the game board to play against computer
  
  
 def withpc(game_board):
