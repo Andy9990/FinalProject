@@ -1,3 +1,4 @@
+#FinalProject
 #A Tic Tac Toe game with GUI using tkinter
  
 # importing libraries
@@ -30,6 +31,7 @@ def winner(b, l):
             (b[0][2] == l and b[1][1] == l and b[2][0] == l))
  
 # Text on button while playing with another player
+# The variable "box" is the message that will apear when someone wins or ties. 
 def get_text(i, j, gb, l1, l2):
     global sign
     if board[i][j] == ' ':
@@ -89,7 +91,7 @@ def gameboard_pl(game_board, l1, l2):
     game_board.mainloop()
  
 # Decide the next move when playing against computer
- 
+# The "move" and "possibible move" variable assigns where the computer will make next move to
  
 def pc():
     possiblemove = []
@@ -123,7 +125,7 @@ def pc():
             return edge[move]
  
 # Creating text on button while playing against computer
- 
+# The "x" variable shows the outcome of the game for the player
  
 def get_text_pc(i, j, gb, l1, l2):
     global sign
@@ -210,7 +212,7 @@ def withplayer(game_board):
  
 # main function
 # assigning color, size, font, and the text on buttons and GUI window 
- 
+# the "menu" variable works to make the menu box and what goes in it
  
 def play():
     menu = Tk()
