@@ -11,7 +11,7 @@ from copy import deepcopy
 # Deciding whos turn it is
 sign = 0
  
-# Creates an empty board to play on
+# Creating an empty board to play on
 global board
 board = [[" " for x in range(3)] for y in range(3)]
  
