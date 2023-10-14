@@ -8,14 +8,14 @@ from functools import partial
 from tkinter import messagebox
 from copy import deepcopy
  
-# deciding whos turn it is
+# Deciding whos turn it is
 sign = 0
  
-# Creates an empty board
+# Creates an empty board to play on
 global board
 board = [[" " for x in range(3)] for y in range(3)]
  
-# Check O or X is winner
+# Check if O or X is winner
 # according to the rules of the game
  
  
@@ -53,13 +53,13 @@ def get_text(i, j, gb, l1, l2):
         gb.destroy()
         box = messagebox.showinfo("Tie Game", "Tie Game")
  
-# Validating if the player can push the button or not
+# Testing validation if the player can push the button or not
  
  
 def isfree(i, j):
     return board[i][j] == " "
  
-# Validating if the board is full or not
+# Testing validation if the board is full or not
  
  
 def isfull():
@@ -88,7 +88,7 @@ def gameboard_pl(game_board, l1, l2):
             button[i][j].grid(row=m, column=n)
     game_board.mainloop()
  
-# Decide the next move of system
+# Decide the next move when playing against computer
  
  
 def pc():
@@ -122,7 +122,7 @@ def pc():
             move = random.randint(0, len(edge)-1)
             return edge[move]
  
-# Creating text on button while playing against system
+# Creating text on button while playing against computer
  
  
 def get_text_pc(i, j, gb, l1, l2):
@@ -209,6 +209,7 @@ def withplayer(game_board):
     gameboard_pl(game_board, l1, l2)
  
 # main function
+# assigning color, size, font, and the text on buttons and GUI window 
  
  
 def play():
@@ -240,7 +241,8 @@ def play():
     B2.pack(side='top')
     B3.pack(side='top')
     menu.mainloop()
- 
+
+#end of program 
  
 # Call main function
 if __name__ == '__main__':
